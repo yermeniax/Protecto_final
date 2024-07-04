@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen de Fondo Lejana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{% static "assets/img/arco.jpg" %}');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white; /* Color de texto blanco para todo el cuerpo */
+        }
+
+        .login-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .login-container a {
+            text-decoration: none;
+            color: white;
+            background-color: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <a href="{% url 'login' %}">Acceder</a>
+    </div>
+    <h1>Registra a tus jugadores fácilmente con nuestra plataforma!</h1>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

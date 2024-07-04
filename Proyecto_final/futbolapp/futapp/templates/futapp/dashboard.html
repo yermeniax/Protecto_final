@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Usuario</title>
+    <style>
+        body {
+            background-image: url('/static/assets/img/futbolnoche.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Para organizar elementos verticalmente */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative; /* Posición relativa para permitir el posicionamiento absoluto del botón */
+        }
+
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #f44336; /* Color de fondo del botón */
+            color: white; /* Color de texto del botón */
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            background-color: #cc0000; /* Color de fondo del botón al pasar el mouse */
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #008CBA; /* Color de fondo de los botones */
+            color: white; /* Color de texto de los botones */
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .btn:hover {
+            background-color: #005f73; /* Color de fondo de los botones al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido al Portal de Administracion</h1>
+    <div class="btn-container">
+        <a href="{% url 'equipos' %}" class="btn">Equipos</a>
+        <a href="{% url 'profesores' %}" class="btn">Profesores</a>
+        <a href="{% url 'jugadores' %}" class="btn">Jugadores</a>
+        <a href="{% url 'pagos' %}" class="btn">Pagos</a>
+        <!-- Agrega más botones según necesites -->
+      
+    <div class="button-container">
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="logout-btn">Salir</button>
+        </form>
+    </div>
+</body>
+</html>

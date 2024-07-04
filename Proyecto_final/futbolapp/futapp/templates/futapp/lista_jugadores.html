@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Jugadores</title>
+</head>
+<body>
+    <h1>Lista de Jugadores</h1>
+    <ul>
+        {% for jugador in jugadores %}
+            <li>{{ jugador.nombre }} {{ jugador.apellido }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

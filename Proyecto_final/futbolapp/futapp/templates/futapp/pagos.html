@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pagos</title>
+</head>
+<body>
+    <h1>Pagos Registrados</h1>
+    <ul>
+        {% for pago in pagos %}
+            <li>{{ pago.jugador.nombre }} - Tipo: {{ pago.get_tipo_pago_display }} - Monto: {{ pago.monto }} - Fecha: {{ pago.fecha_pago }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
